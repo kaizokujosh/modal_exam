@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="modal.css" type="text/css" />
+		<title>Modal</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Your Subscriptions</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>Subscription</th>
+						<th>Next Rebill</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>$49.99 per month</td>
+						<td>December 13, 2020</td>
+						<td><button id="cancel_button" onclick="document.getElementById('confimation_modal').style.display='block'">Cancel</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="confimation_modal" class="modal">
+			<span onclick="document.getElementById('confimation_modal').style.display='none'" class="close" title="Close Modal">×</span>
+			<div class="modal-content">
+				<div class="modal_container">
+					<h1 id="modal_label" style="color: black;">Are you sure you want to cancel your subscription?</h1>
+					<h1 id="label_success" style="color: black; display: none;">Subscription successfully cancelled!</h1>
+					<div class="clearfix">
+						<button type="button" id="no" onclick="document.getElementById('confimation_modal').style.display='none'" class="cancelbtn">No</button>
+						<button type="button" id="yes" onclick="yesClicked()" class="yesbtn">Yes - Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<script type="text/javascript" src="modal.js"></script>
+		</footer>
+	</body>
+</html>
